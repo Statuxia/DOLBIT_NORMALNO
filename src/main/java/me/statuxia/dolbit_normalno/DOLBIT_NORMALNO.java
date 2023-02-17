@@ -40,11 +40,11 @@ public final class DOLBIT_NORMALNO extends JavaPlugin {
         int rnd = ThreadLocalRandom.current().nextInt(4);
         switch (rnd) {
             case 0 -> {
-                // Швыряет игрока во все стороны и спавнит на месте, где игрок стоял, тнт.
+                // РЁРІС‹СЂСЏРµС‚ РёРіСЂРѕРєР° РІРѕ РІСЃРµ СЃС‚РѕСЂРѕРЅС‹ Рё СЃРїР°РІРЅРёС‚ РЅР° РјРµСЃС‚Рµ, РіРґРµ РёРіСЂРѕРє СЃС‚РѕСЏР», С‚РЅС‚.
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     if (player.getName().equals(NAME))
                         continue;
-                    player.sendActionBar("§5§krandomsymbolsrandomsymbols");
+                    player.sendActionBar("В§5В§krandomsymbolsrandomsymbols");
                     for (int i = 0; i < 10; i++) {
                         Bukkit.getScheduler().runTaskLater(this, () -> {
                             Location location = player.getLocation();
@@ -61,7 +61,7 @@ public final class DOLBIT_NORMALNO extends JavaPlugin {
                     }
                 }
             }
-            // Забирает один предмет у игрока.
+            // Р—Р°Р±РёСЂР°РµС‚ РѕРґРёРЅ РїСЂРµРґРјРµС‚ Сѓ РёРіСЂРѕРєР°.
             case 1 -> {
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     if (player.getName().equals(NAME))
@@ -73,27 +73,27 @@ public final class DOLBIT_NORMALNO extends JavaPlugin {
                     if (item != null) {
                         player.getWorld().dropItem(player.getLocation().add(random.nextInt(5) * (random.nextBoolean() ? -1 : 1), 5,
                                 random.nextInt(5) * (random.nextBoolean() ? -1 : 1)), item);
-                        player.sendActionBar("§cЗлые силы выкинули ваш предмет.");
+                        player.sendActionBar("В§cР—Р»С‹Рµ СЃРёР»С‹ РІС‹РєРёРЅСѓР»Рё РІР°С€ РїСЂРµРґРјРµС‚.");
                     }
                 }
             }
-            // Дает случайный бафф.
+            // Р”Р°РµС‚ СЃР»СѓС‡Р°Р№РЅС‹Р№ Р±Р°С„С„.
             case 2 -> {
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     if (player.getName().equals(NAME))
                         continue;
-                    player.sendActionBar("§dСлучайный бафф!");
+                    player.sendActionBar("В§dРЎР»СѓС‡Р°Р№РЅС‹Р№ Р±Р°С„С„!");
                     int potionRnd = ThreadLocalRandom.current().nextInt(PotionEffectType.values().length);
                     PotionEffect effect = new PotionEffect(PotionEffectType.values()[potionRnd], 60 * 20, 2);
                     player.addPotionEffect(effect);
                 }
             }
-            // Звук. Не более.
+            // Р—РІСѓРє. РќРµ Р±РѕР»РµРµ.
             case 3 -> {
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     if (player.getName().equals(NAME))
                         continue;
-                    player.sendActionBar("§3Вы разбудили деда.");
+                    player.sendActionBar("В§3Р’С‹ СЂР°Р·Р±СѓРґРёР»Рё РґРµРґР°.");
                     player.playSound(player, Sound.ENTITY_WARDEN_EMERGE, 1.0f, 1.0f);
                 }
             }
