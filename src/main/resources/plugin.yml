@@ -1,0 +1,14 @@
+name: DOLBIT_NORMALNO
+version: '${version}'
+main: me.statuxia.dolbit_normalno.DOLBIT_NORMALNO
+api-version: 1.19
+
+
+commands:
+  dolbitnormalno:
+    description: shit
+    aliases: [dn, dolbit]
+
+permissions:
+  dolbitnormalno:
+    default: op
